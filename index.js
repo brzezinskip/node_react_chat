@@ -2,10 +2,10 @@ const app = require('express')();
 const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
-server.listen(80);
+server.listen(4000);
 
 app.get('/', (req, res) => {
-  res.sendfile(`${__dirname}/index.html`);
+  res.sendFile(`${__dirname}/public/index.html`);
 });
 
 io.on('connection', socket => {
