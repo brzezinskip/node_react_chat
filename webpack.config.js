@@ -1,28 +1,38 @@
 const webpack = require('webpack');
 const path = require('path');
-const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const BUILD_DIR = path.resolve(`${__dirname}/public`);
 const APP_DIR = path.resolve(`${__dirname}/client/app`);
 
-const config = {
+module.exports = {
   entry: `${APP_DIR}/index.jsx`,
   output: {
     path: BUILD_DIR,
     filename: 'bundle.js'
   },
   module: {
-   loaders: [
-     {
-       test: /\.jsx?$/,
-       loader: 'babel-loader',
-       exclude: /node_modules/
-     }
-   ]
- },
- plugins: [
-   new LiveReloadPlugin()
- ]
+    rules: [
+      {
+        test: /.jsx?$/,
+        exclude: /node_modules/,
+        include: path.join(__dirname, 'client'),
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              babelrc: false,
+              presets: [
+                ['es2015', { modules: false }],
+                'react',
+              ],
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(css|scss|sass)$/,
+        loader: 'style!css!sass',
+      },
+    ]
+  },
 };
-
-module.exports = config;
