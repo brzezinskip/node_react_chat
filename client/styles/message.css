@@ -1,0 +1,66 @@
+li {
+    list-style: none;
+    height: 150px;
+}
+
+.nickname {
+    font-size: 14px;
+    margin: 0;
+    position: absolute;
+    color: #a7afc1;
+    top: -20px;
+    left: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.message-container {
+    width: 45%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+    display: block;
+    margin-bottom: 45px;
+    padding-bottom: 15px;
+}
+
+.message-date {
+    position: absolute;
+    bottom: 5px;
+    margin: 0;
+    font-weight: 700;
+    color: #525252;
+}
+
+hr {
+    height: 1px;
+    background-color: #0e0e2d;
+    color: #0e0e2d;
+    margin-bottom: 15px;
+    border: 0;
+}
+
+.own-message {
+    float: left;
+    background-color: #dadeea;
+}
+
+.user-message {
+    float: right;
+    background-color: #c1c5c7;
+}
+
+.messages-list {
+    padding: 45px;
+    height: auto;
+    background-color: #f1f0e8;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    border: 3px black solid;
+}
+
+.message-body {
+    font-size: 18px;
+    color: #525252;
+}
